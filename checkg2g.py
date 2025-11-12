@@ -46,11 +46,11 @@ def remove_duplicates(file_path, converted_path):
 	return duplicates, len(duplicates)
 
 # These are the examples we ran to fix the Belarussian stressing dictionary during development.
-good, bad = check_g2g("bel.txt")
-print(f"Good words: {good}\nBad words: {bad}")
-#with open("bel_homographs.csv", "w", encoding="utf-8") as out:
-	#out.write("original spaced word|spaced homograph separated by commas (multiple entries of the original word)\n")
-	#out.write('\n'.join(check_for_homographs("bel.txt")))
+#good, bad = check_g2g("bel.txt")
+#print(f"Good words: {good}\nBad words: {bad}")
+with open("bel_homographs.csv", "w", encoding="utf-8") as out:
+	out.write("original spaced word|spaced homograph separated by commas (multiple entries of the original word)\n")
+	out.write('\n'.join(check_for_homographs("bel.txt")))
 #print("Working...")
 #doubles, numdoubles = remove_duplicates("bel.txt", "belnew.txt")
 #print(f"Done! We removed {numdoubles} doubles, which are words with no replacement.")
